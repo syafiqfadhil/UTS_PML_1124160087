@@ -38,7 +38,7 @@ class ProfilePage extends StatelessWidget {
           IconButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Terima kasih telah melihat profil saya'))
+                const SnackBar(content: Text('Fitur Masih Dalam Perbaikan'))
               );
             }, 
             icon: Icon(Icons.person_2)
@@ -80,7 +80,86 @@ class ProfilePage extends StatelessWidget {
                     'Teknik Informatika',
                     style: Theme.of(context).textTheme.bodyMedium,
                     textAlign: TextAlign.center,
-                  )
+                  ),
+
+                  const SizedBox(height: 24,),
+
+                  Padding(
+                    padding: EdgeInsets.all(16),
+
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: AlignmentGeometry.centerLeft,
+                          child: Text('Informasi Pribadi'),
+                        ),
+
+                        const Card(
+                          child: InfoTile(
+                            icon: Icons.email, 
+                            label: 'Email', 
+                            value: 'fadilvtr23@gmail.com'
+                            ),
+                        ),
+
+                        const Card(
+                          child: InfoTile(
+                            icon: Icons.phone, 
+                            label: 'Nomor Handphone', 
+                            value: '0856323293131'
+                            ),
+                        ),
+
+                        const Card(
+                          child: InfoTile(
+                            icon: Icons.school, 
+                            label: 'Kelas', 
+                            value: 'TI 24 SE-2'
+                            ),
+                        ),
+
+                        const Card(
+                          child: InfoTile(
+                            icon: Icons.code,
+                            label: 'Akun Github',
+                            value: 'syafiqfadhil'
+                            ),
+                        ),
+
+                        const SizedBox(height: 16),
+
+                        Align(
+                          alignment: AlignmentGeometry.centerLeft,
+                          child: Text('Hobi dan Keahlian'),
+                        ),
+
+                        const Card(
+                          child: InfoTile(
+                            icon: Icons.sports_soccer, 
+                            label: 'Hobi', 
+                            value: 'Bermain Futsal'
+                            ),
+                        ),
+
+                        const Card(
+                          child: InfoTile(
+                            icon: Icons.computer, 
+                            label: 'Keahlian', 
+                            value: 'Flutter & Dart'
+                            ),
+                        ),
+
+                        const Card(
+                          child: InfoTile(
+                            icon: Icons.timeline, 
+                            label: 'Keahlian', 
+                            value: 'Analisis Data'
+                            ),
+                        ),
+
+                      ],
+                    ),
+                    ),
                 ],
               ),
             ),
