@@ -48,18 +48,45 @@ class ProfilePage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              children: [
-                CircleAvatar(
-                  radius: 50,
-                  child: Icon(Icons.person_2, size: 50),
-                )
-              ],
-            ),
+            padding: const EdgeInsets.all(16),
+            child: SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center, 
+                children: [
+                  const CircleAvatar(
+                    radius: 50,
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.blue,
+                    child: Icon(Icons.person_2, size: 50),
+                  ),
+                  const SizedBox(height: 16),
+
+                  Text(
+                    'Fadhil Hidayattulloh',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 8),
+
+                  Text(
+                    'NIM: 1124160087',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 4),
+
+                  Text(
+                    'Teknik Informatika',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
             ),
           ), 
         ),
+      ),
     );
   }
 }
