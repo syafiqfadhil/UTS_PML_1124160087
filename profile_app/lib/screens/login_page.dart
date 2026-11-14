@@ -45,8 +45,24 @@ class _LoginPageState extends State<LoginPage> {
   }
   @override
   Widget build(BuildContext context){
-    return const Placeholder(
-      
+    return Scaffold( 
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  
+                ],
+              ),
+            ),
+          ),
+        )
+        ),
     );
   }
 }
