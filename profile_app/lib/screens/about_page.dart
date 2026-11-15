@@ -21,6 +21,19 @@ class AboutPage extends StatelessWidget {
     },
   ];
 
+  final List> _educationHistory = const [
+    {
+      'institution' : 'Institut Teknologi & Bisnis Bina Sarana Global',
+      'period' : '2024 - Sekarang',
+      'detail' : 'S1 Teknik Informatika'
+    },
+    {
+      'institution' : 'MA AT-TAQWA YASTU',
+      'period' : '2020 - 2023',
+      'detail' : 'Pendidikan Menegah Atas'
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     final ColorScheme = Theme.of(context).colorScheme;
@@ -53,6 +66,29 @@ class AboutPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 24),
+          Text(
+            'Riwayat Pendidikan',
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          ..._educationHistory.map(
+            (edu) => Card(
+              margin: const EdgeInsets.symmetric(vertical: 6),
+              child: ListTile(
+                leading: Icon(Icons.school, color: ColorScheme.primary),
+                title: Text(
+                  edu['institution']!,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                subtitle: Text('${edu['detail']} (${edu['period']})'),
+              ),
+            )
+          )
         ],
       ),
     );
