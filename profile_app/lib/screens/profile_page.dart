@@ -52,6 +52,63 @@ class _ProfilePageState extends State<ProfilePage> {
     @override
     Widget build(BuildContext context) {
       return Scaffold(
+        appBar: AppBar(
+          title: const Text('Profile Mahasiswa'),
+          centerTitle: true,
+          actions: [
+            Icon(widget.isDarkMode ? Icons.dark_mode : Icons.light_mode),
+            Switch(
+              value: widget.isDarkMode, 
+              onChanged: widget.onThemeChanged,
+              ),
+          ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text(_profile.nama), 
+                accountEmail: Text('${_profile.nim} . ${_profile.kelas}'),
+                currentAccountPicture: const CircleAvatar(
+                  backgroundImage: AssetImage('assets/fadhil.jpg'),
+                ),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text('Profile Saya'),
+                onTap: () => Navigator.pop(context),
+              ),
+              ListTile(
+                leading: const Icon(Icons.edit),
+                title: const Text('Edit Profile'),
+                onTap: () {
+                  Navigator.pop(context);
+                _navigateToEditProfile();
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.info_outline),
+                title: const Text('Tentang Saya'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/about');
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.logout, color: Colors.red),
+                title: const Text('Keluar', style: TextStyle(color: Colors.red)),
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+              )
+            ],
+          ),
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
@@ -60,7 +117,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-
+                  
                 ],
               ),
             ),
