@@ -96,7 +96,38 @@ class _LoginPageState extends State<LoginPage> {
                       return null;
                     },
                   ),
+
                   const SizedBox(height: 16,),
+                  TextFormField(
+                    controller: _passwordController,
+                    obscureText: _obscurePassword,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      prefixIcon: const Icon(Icons.lock),
+                      border: const OutlineInputBorder(),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscurePassword ? Icons.visibility_off : Icons.visibility
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscurePassword = ! _obscurePassword;
+                          });
+                        },
+                        ),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty){
+                        return'Password wajib diisi';
+                      }
+                      if (value.length < 6) {
+                        return 'Password minimal 6 karakter';
+                      }
+                      return null;
+                    },
+                  ),
+
+                  const SizedBox(height: 24,)
                 ],
               ),
             ),
