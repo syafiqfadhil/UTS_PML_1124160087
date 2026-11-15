@@ -127,7 +127,25 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
 
-                  const SizedBox(height: 24,)
+                  const SizedBox(height: 24,),
+                  SizedBox(
+                    height: 48,
+                    child: ElevatedButton(onPressed: _isLoading ? null : _handleLogin, 
+                    child: _isLoading
+                      ? const SizedBox(
+                        height: 22,
+                        width: 22,
+                        child: CircularProgressIndicator(strokeWidth: 2.5,),
+                      )
+                      : const Text(
+                        'Masuk',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
