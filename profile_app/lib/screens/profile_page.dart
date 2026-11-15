@@ -117,7 +117,44 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  
+                  const CircleAvatar(
+                    radius: 55,
+                    backgroundImage: AssetImage('assets/fadhil.jpg'),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    _profile.nama,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    'NIM: ${_profile.nim} | Kelas: ${_profile.kelas}',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    _profile.prodi,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 16,),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Text(
+                        _profile.bio,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
