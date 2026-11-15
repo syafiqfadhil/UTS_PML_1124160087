@@ -75,7 +75,28 @@ class _LoginPageState extends State<LoginPage> {
                     style: Theme.of(context).textTheme.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 32,)
+
+                  const SizedBox(height: 32,),
+                  TextFormField(
+                    controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(
+                      labelText: 'Email',
+                      hintText: 'Contoh: fadhil@gmail.com',
+                      prefixIcon: Icon(Icons.email),
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: (value){
+                      if (value == null || value.trim().isEmpty){
+                        return'Email wajib di isi';
+                      }
+                      if(!value.contains('@')){
+                        return'Format email tidak valid';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 16,),
                 ],
               ),
             ),
