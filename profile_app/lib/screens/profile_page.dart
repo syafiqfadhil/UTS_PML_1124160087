@@ -155,10 +155,48 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
 
                   const SizedBox(height: 20),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Informasi Kontak',
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  InfoTile(
+                    icon: Icons.email, 
+                    label: 'Email', 
+                    value: _profile.email,
+                    ),
+                  InfoTile(
+                    icon: Icons.code,
+                    label: 'Github',
+                    value: _profile.github,
+                    ),
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: () => Navigator.pushNamed(
+                        context, 
+                        '/about'
+                        ),
+                      icon: const Icon(Icons.school),
+                      label: const Text('Tentang Saya & Pendidikan'),
+                      ),
+                  ),
+                  const SizedBox(height: 70,)
                 ],
               ),
             ),
           )
+          ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: _navigateToEditProfile,
+          icon: const Icon(Icons.edit),
+          label: const Text('Edit Profil'),
           ),
       );
     }
