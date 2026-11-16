@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_app/models/profile.dart';
 import 'screens/login_page.dart';
 import 'screens/profile_page.dart';
 import 'screens/edit_profile_page.dart';
@@ -49,12 +50,15 @@ class _MyAppState extends State<MyApp> {
 
       routes: {
         '/':(context) => const LoginPage(),
-        '/profile':(context) => const ProfilePage(
+        '/profile':(context) => ProfilePage(
           isDarkMode: _themeMode == ThemeMode.dark,
           onThemeChanged: _toggleTheme,
 
         ),
-        '/edit-profile':(context) => const EditProfilePage(),
+        '/edit-profile':(context) {
+          final profile = ModalRoute.of(context)!.settings.arguments as Profile;
+          return EditProfilePage(profile: profile);
+        },
         '/about':(context) => const AboutPage(),
       },
     );
