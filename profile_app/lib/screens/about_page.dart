@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
-  final List> _skillAndHobbies = const [
+  final List<Map<String, String>> _skillAndHobbies = const [
     {
       'title': 'Mobile App Development (Flutter & Dart)',
       'subtitle': 'Membangun antarmuka responsif, Form validation, dan manajemen state',
@@ -17,11 +17,11 @@ class AboutPage extends StatelessWidget {
     },
     {
       'title': 'Futsal',
-      'subtitle': 'Aktif berlatih dan berorganisasi di uni kegiatan mahasiswa kampus',
+      'subtitle': 'Aktif berlatih dan berorganisasi di unit kegiatan mahasiswa kampus',
     },
   ];
 
-  final List> _educationHistory = const [
+  final List<Map<String, String>> _educationHistory = const [
     {
       'institution' : 'Institut Teknologi & Bisnis Bina Sarana Global',
       'period' : '2024 - Sekarang',
@@ -30,13 +30,13 @@ class AboutPage extends StatelessWidget {
     {
       'institution' : 'MA AT-TAQWA YASTU',
       'period' : '2020 - 2023',
-      'detail' : 'Pendidikan Menegah Atas'
+      'detail' : 'Pendidikan Menengah Atas'
     },
   ];
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme = Theme.of(context).colorScheme;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: AppBar(
@@ -57,7 +57,7 @@ class AboutPage extends StatelessWidget {
             (item) => Card(
               margin: const EdgeInsets.symmetric(vertical: 6),
               child: ListTile(
-                leading: Icon(Icons.star, color: ColorScheme.primary),
+                leading: Icon(Icons.star, color: colorScheme.primary),
                 title: Text(
                   item['title']!,
                   style: const TextStyle(fontWeight: FontWeight.bold),
@@ -78,7 +78,7 @@ class AboutPage extends StatelessWidget {
             (edu) => Card(
               margin: const EdgeInsets.symmetric(vertical: 6),
               child: ListTile(
-                leading: Icon(Icons.school, color: ColorScheme.primary),
+                leading: Icon(Icons.school, color: colorScheme.primary),
                 title: Text(
                   edu['institution']!,
                   style: const TextStyle(

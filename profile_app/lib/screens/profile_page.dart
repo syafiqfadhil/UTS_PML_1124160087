@@ -71,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 accountName: Text(_profile.nama), 
                 accountEmail: Text('${_profile.nim} . ${_profile.kelas}'),
                 currentAccountPicture: const CircleAvatar(
-                  backgroundImage: AssetImage('assets/fadhil.jpg'),
+                  backgroundImage: AssetImage('assets/Fadhil.jpg'),
                 ),
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
@@ -119,7 +119,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 children: [
                   const CircleAvatar(
                     radius: 55,
-                    backgroundImage: AssetImage('assets/fadhil.jpg'),
+                    backgroundImage: AssetImage('assets/Fadhil.jpg'),
                   ),
                   const SizedBox(height: 16),
                   Text(
