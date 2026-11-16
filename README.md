@@ -14,7 +14,7 @@
 
 | Halaman Login | Halaman Profil | Halaman Tentang Saya | Halaman Edit Profil |
 | :---: | :---: | :---: | :---: |
-| ![Halaman Login](profile_app/assets/login.png) | ![Halaman Profil](profile_app/assets/profil.png) | ![Halaman Tentang Saya](profile_app/assets/tentang.png) | ![Halaman Edit Profil](assets/edit.png) |
+| ![Halaman Login](profile_app/assets/login.png) | ![Halaman Profil](profile_app/assets/profil.png) | ![Halaman Tentang Saya](profile_app/assets/tentang.png) | ![Halaman Edit Profil](profile_app/assets/edit.png) |
 
 ## Daftar Fitur
 - **Login (`LoginPage`):** Validasi input email dan password sebelum masuk ke halaman utama menggunakan `Navigator.pushReplacementNamed`.
