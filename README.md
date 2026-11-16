@@ -14,7 +14,7 @@
 
 | Halaman Login | Halaman Profil | Halaman Tentang Saya | Halaman Edit Profil |
 | :---: | :---: | :---: | :---: |
-| ![Halaman Login](profil_app/assets/login.png) | ![Halaman Profil](profil_app/assets/profil.png) | ![Halaman Tentang Saya](profil_app/assets/tentang.png) | ![Halaman Edit Profil](soal2-profil-app/assets/edit.png) |
+| ![Halaman Login](assets/login.png) | ![Halaman Profil](assets/profil.png) | ![Halaman Tentang Saya](assets/tentang.png) | ![Halaman Edit Profil](assets/edit.png) |
 
 ## Daftar Fitur
 - **Login (`LoginPage`):** Validasi input email dan password sebelum masuk ke halaman utama menggunakan `Navigator.pushReplacementNamed`.
